@@ -17,7 +17,10 @@ app.MapGet("/throw", () => {
     throw new ApplicationException("Ошибка!");
 });
 
-app.MapDefaultControllerRoute();
-
+//app.MapDefaultControllerRoute();
+app.MapControllerRoute(
+    name: "default",
+    //маршрут
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
